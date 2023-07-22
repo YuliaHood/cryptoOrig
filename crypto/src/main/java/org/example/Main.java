@@ -30,8 +30,18 @@ public class Main {
         }
         int key = (int) userInput;
 
+        System.out.println("Оберіть що саме ви хочете зробити з данними файлу :" +
+                "Якщо ви хочете зашифрувати данні шифром Цезаря , введіть " + "+" +
+                "Якщо ви хочете розшифрувати данні шифром Цезаря , введіть " + "-");
 
+        String userSign = scanner.nextLine();
+        if(userSign.equals("+")){
 
+        } else if (userSign.equals("-")) {
+
+        }else {
+            System.out.println("Введіть вірний символ!");
+        }
     }
     public static boolean isValidFilePath(String filePath) {
         try {
