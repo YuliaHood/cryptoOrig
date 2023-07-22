@@ -19,19 +19,27 @@ public class Main {
                 isValidPath = true;
             }else {
                 System.out.println("Путь до файлу не вірний( спробуйте будь ласка ще раз!");
+                path = scanner.nextLine();
             }
         }
 
         System.out.println("Тепер введіть ключ " + "(Обовязково число!)");
-        char userInput = scanner.next().charAt(0);
 
-        if (!Character.isDigit(userInput)) {
-            System.out.println("Введіть будь ласка саме число!");
+        while (true) {
+            String userInputNumber = scanner.nextLine();
+            int key = 0;
+            if (userInputNumber.matches("\\d+")) {
+                key = Integer.parseInt(userInputNumber);
+                break;
+            } else {
+                System.out.println("Введений символ не є числом! Спробуйте ще раз)");
+            }
         }
-        int key = (int) userInput;
 
-        System.out.println("Оберіть що саме ви хочете зробити з данними файлу :" +
-                "Якщо ви хочете зашифрувати данні шифром Цезаря , введіть " + "+" +
+
+
+        System.out.println("Оберіть що саме ви хочете зробити з данними файлу :\n" +
+                "Якщо ви хочете зашифрувати данні шифром Цезаря , введіть " + "+\n" +
                 "Якщо ви хочете розшифрувати данні шифром Цезаря , введіть " + "-");
 
         String userSign = scanner.nextLine();
